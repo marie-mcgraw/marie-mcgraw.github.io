@@ -83,8 +83,8 @@ input, select, textarea {
 	}
 .myImage {
   float: left;
-  height: 50px;
-  width: 165px;
+  height: 20px;
+  width: 65px;
 }
 .myHeading {
   float:right;
