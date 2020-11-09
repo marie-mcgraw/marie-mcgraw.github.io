@@ -81,7 +81,14 @@ input, select, textarea {
 	*, *:before, *:after {
 		box-sizing: inherit;
 	}
-
+.myImage {
+  float: left;
+  height: 75px;
+  width: 235px;
+}
+.heading {
+  float:right;
+}
 	body {
 		padding-top: 3.5em;
 	}
