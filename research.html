@@ -12,6 +12,37 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
+	details {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 0.5em;
+      margin-bottom: 10px;
+      max-width: 300px;
+    }
+	summary {
+      font-weight: bold;
+      font-size: 1.1em;
+      padding: 0.5em;
+      cursor: pointer;
+      list-style: none; /* Removes the default arrow in Firefox/Chrome */
+      position: relative;
+    }
+	summary::-webkit-details-marker {
+      display: none;
+    }
+	summary::after {
+      content: ' ▶';
+      font-size: 0.8em;
+      float: right;
+      transition: transform 0.2s;
+    }
+	details[open] summary::after {
+      transform: rotate(90deg);
+    }
+	.dropdown-content {
+      padding: 0.5em 1em;
+      color: #333;
+    }
     h2 {
       /* Sets the space after the header to 0 or a smaller value like 5px */
       margin-bottom: 3px; 
@@ -61,14 +92,18 @@
 							<h1>Research Interests</h1>
 							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
               My research interests are centered around using statistical, data-driven, and machine learning models to study and model a variety of phenomena in weather and climate. I enjoy finding new signals in big, complex, noisy geospatial datasets, and I love thinking about <b>how</b> we as Earth scientists use these tools as much as I love applying them to exciting and relevant problems in weather and climate. Below, you can see some of the recurring themes that have turned up in my work throughout the years. 
-							<h2>AI and Tropical Meteorology</h2>
-							Much of my work has been focused on developing machine learning models for various tropical cyclone forecasting tasks. Many of these models are developed with the end goal of producting operational forecast products for use at the National Hurricane Center or elsewhere at NOAA. Some of my work in this area includes: 
-              <li><b>Tropical Cyclone Artificial Neural-network Error Model</b>: A neural network model that predicts tropical cyclone forecast errors for track and intensity; currently in the research to operations pipeline at the National Hurricane Center. See <a href="https://ams.confex.com/ams/36Hurricanes/meetingapp.cgi/Paper/441911">Mark DeMaria's conference talk</a>, <a href="https://journals.ametsoc.org/view/journals/aies/4/2/AIES-D-24-0066.1.xml">Martin Fernandez's paper</a> in <i>Artificial Intelligence in the Earth Systems</i>, and the<a href="https://rammb-data.cira.colostate.edu/tc_realtime/">real-time forecasts</a> at CIRA.</li>
-              <li>><b>TC Structure in Synthetic Microwave Imagery</b>: Using synthetic passive microwave data to study tropical cyclone evolution and structure at high time resolutions that aren’t available with observed satellite imagery. See my <a href="https://ams.confex.com/ams/105ANNUAL/meetingapp.cgi/Paper/454498">2025 AMS talk</a>; paper to be submitted soon!</li>
+							<details>
+							<summary>AI and Tropical Meteorology</summary>
+							<div class="dropdown-content">
+			<p>Much of my work has been focused on developing machine learning models for various tropical cyclone forecasting tasks. Many of these models are developed with the end goal of producting operational forecast products for use at the National Hurricane Center or elsewhere at NOAA. Some of my work in this area includes:
+              <li><b>Tropical Cyclone Artificial Neural-network Error Model</b>: A neural network model that predicts tropical cyclone forecast errors for track and intensity; currently in the research to operations pipeline at the National Hurricane Center. See <a href="https://ams.confex.com/ams/36Hurricanes/meetingapp.cgi/Paper/441911">Mark DeMaria's conference talk</a>, <a href="https://journals.ametsoc.org/view/journals/aies/4/2/AIES-D-24-0066.1.xml">Martin Fernandez's paper</a> in <i>Artificial Intelligence in the Earth Systems</i>, and the <a href="https://rammb-data.cira.colostate.edu/tc_realtime/">real-time forecasts</a> at CIRA.</li>
+              <li><b>TC Structure in Synthetic Microwave Imagery</b>: Using synthetic passive microwave data to study tropical cyclone evolution and structure at high time resolutions that aren’t available with observed satellite imagery. See my <a href="https://ams.confex.com/ams/105ANNUAL/meetingapp.cgi/Paper/454498">2025 AMS talk</a>; paper to be submitted soon!</li>
               <li><b>TCBench</b>: Effort led by the Universite de Lausanne to create a benchmarking dataset for tropical cyclone predictions in AI weather models; see preprint at <a href="https://arxiv.org/abs/2601.23268">arXiv</a></li>
               <li><b>Tropical Cyclone Formation Probability</b>: Using AI models to create extended global tropical cyclogenesis forecasts. See 2022 Hollings Scholar <a href="https://ams.confex.com/ams/103ANNUAL/meetingapp.cgi/Paper/413396">Marshall Baldwin's talk</a> and the <a href="https://www.ospo.noaa.gov/products/ocean/tropical/tcfp/">real-time TCFP page</a>.  </li>
-              <li><b>Causal discovery for hurricane forecasting:</b> Dr. Saranya Ganesh Sudheesh developed a causal discovery model that identified potential new predictors for statistical hurricane intensity forecasts. Her work identified 6 potential new predictors that are currently being tested in existing operational tropical cyclone intensity forecast models; see preprint at <a href="https://arxiv.org/abs/2510.02050">arXiv</a> and forthcoming manuscript in <i>Weather and Forecasting</i>.</li>
-              <h2>Climate Variability and Change</h2>
+              <li><b>Causal discovery for hurricane forecasting:</b> Dr. Saranya Ganesh Sudheesh developed a causal discovery model that identified potential new predictors for statistical hurricane intensity forecasts. Her work identified 6 potential new predictors that are currently being tested in existing operational tropical cyclone intensity forecast models; see preprint at <a href="https://arxiv.org/abs/2510.02050">arXiv</a> and forthcoming manuscript in <i>Weather and Forecasting</i>.</li>  </p>
+        </div>      
+		</details>
+			  <h2>Climate Variability and Change</h2>
               I have also given several invited talks at scientific conferences, mostly on the topic of Causality, Interpretability, and Uncertainty:
               <li><a href="https://www.grc.org/machine-learning-for-actionable-climate-science-conference/2025/">Causality and Uncertainty in Machine Learning for Climate Science"</a>. In 2025, I gave a keynote talk at the Gordon Research Conference on Machine Learning for Actionable Climate Science.</li>
               <li><a href="https://www.youtube.com/watch?v=xdFWVsUqvoo">Causality and Interpretability in Climate Modeling</a>, a talk at the Aspen Global Change Institute's workshop on machine learning for climate modeling. </li>
