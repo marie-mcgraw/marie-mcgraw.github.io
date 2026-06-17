@@ -11,7 +11,35 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>
+     <style>
+	details {
+      padding: 0.5em;
+      margin-bottom: 10px;
+    }
+	summary {
+      font-weight: bold;
+      font-size: 1.1em;
+      padding: 0.5em;
+      cursor: pointer;
+      list-style: none; /* Removes the default arrow in Firefox/Chrome */
+      position: relative;
+    }
+	summary::-webkit-details-marker {
+      display: none;
+    }
+	summary::after {
+      content: ' ▶';
+      font-size: 0.8em;
+      float: right;
+      transition: transform 0.2s;
+    }
+	details[open] summary::after {
+      transform: rotate(90deg);
+    }
+	.dropdown-content {
+      padding: 0.5em 1em;
+      color: #333;
+    }
     h2 {
       /* Sets the space after the header to 0 or a smaller value like 5px */
       margin-bottom: 3px; 
